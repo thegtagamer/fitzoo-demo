@@ -1,31 +1,30 @@
 import React, { Component} from 'react';
 import { AppRegistry, StyleSheet, Text, View, Alert, Button } from 'react-native';
 import { Router, Scene } from 'react-native-router-flux';
-import ScarletScreen from './ScarletScreen';
-import GrayScreen from './GrayScreen';
+
+import LoginScreen from './Screens/LoginScreen';
+import SignupScreen from './Screens/SignupScreen';
 
 export default class App extends React.Component {
-  TestFunction(){
-    Alert.alert('Button Pressed !!!')
-  }
-
   render() {
     return (
       <View style={styles.container}>
+      <Text>help</Text>
         <Router>
         <Scene key="root">
-          <Scene key="scarlet"
-            component={ScarletScreen}
-            title="Scarlet"
+          <Scene key="signup"
+            component={SignupScreen}
+            title="Signup"
             initial
           />
           <Scene
-          key="gray"
-          component={GrayScreen}
-          title="Gray"
+          key="login"
+          component={LoginScreen}
+          title="Login"
         />
         </Scene>
-      </Router>  
+      </Router>
+      <Text>help</Text>
       </View>
     );
   }

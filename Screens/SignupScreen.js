@@ -4,17 +4,17 @@ import {
   Text,
   View
 } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux'; // New code
 
-const ScarletScreen = () => {
+const SignupScreen = () => {
   return (
     <View style={styles.container}>
       <Text
-      style={styles.welcome}
-      onPress={() => Actions.gray()} // New Code
-    >
-      Scarlet Screen
-    </Text>
+        style={styles.welcome}
+        onPress={() => Actions.login()} // New Code
+      >
+        SignupScreen
+      </Text>
     </View>
   );
 }
@@ -34,4 +34,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ScarletScreen;
+export default SignupScreen;
