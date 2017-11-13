@@ -5,7 +5,8 @@ import {
   Text,
   View,
   StatusBar,
-  TouchableOpacity
+  TouchableOpacity,
+  TextInput
 } from 'react-native';
 
 import Logo from '../components/Logo';
@@ -26,8 +27,60 @@ export default class Signup extends Component<{}> {
 		<View style={styles.container}>
 	
 		<Logo />
-	
-	<Form type="Signup" />
+	<Text style={styles.logoText}>REGISTER</Text>
+  <TextInput style={styles.inputBox} 
+              underlineColorAndroid='#cccccc' 
+              placeholder="Name"
+              placeholderTextColor = "#c0c0c0"
+              selectionColor="#f47a24"
+              
+              onSubmitEditing={()=> this.fitnessprogram.focus()}
+              />
+              <TextInput style={styles.inputBox} 
+              underlineColorAndroid='#cccccc' 
+              placeholder="Fitness progran"
+              placeholderTextColor = "#c0c0c0"
+              selectionColor="#f47a24"
+              
+              onSubmitEditing={()=> this.dob.focus()}
+              />
+
+<TextInput style={styles.inputBox} 
+              underlineColorAndroid='#cccccc' 
+              placeholder="D.O.B (dd/mm/yyyy)"
+              placeholderTextColor = "#c0c0c0"
+              selectionColor="#f47a24"
+              
+              onSubmitEditing={()=> this.height.focus()}
+              />
+
+<TextInput style={styles.inputBox} 
+              underlineColorAndroid='#cccccc' 
+              placeholder="Height (cm)"
+              placeholderTextColor = "#c0c0c0"
+              selectionColor="#f47a24"
+              
+              onSubmitEditing={()=> this.weight.focus()}
+              />
+
+
+<TextInput style={styles.inputBox} 
+              underlineColorAndroid='#cccccc' 
+              placeholder="Weight (kg)"
+              placeholderTextColor = "#c0c0c0"
+              selectionColor="#f47a24"
+              
+              onSubmitEditing={()=> this.height.focus()}
+              />
+
+          <TextInput style={styles.inputBox} 
+              underlineColorAndroid='#cccccc' 
+              placeholder="Password"
+              secureTextEntry={true}
+              placeholderTextColor = "#c0c0c0"
+              ref={(input) => this.password = input}
+              />  
+       
 	
 	<View style={styles.signupTextCont}>
 <Text style={styles.signupText}>Already have an account? </Text>
@@ -44,10 +97,18 @@ export default class Signup extends Component<{}> {
 }
 const styles = StyleSheet.create({
   container : {
-    backgroundColor:'#00796b',
+    backgroundColor:'#ffffff',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
+
+  },
+  logoText: {
+
+
+    color:'#f47a24',
+    fontSize:16,
+    fontWeight: '500'
 
   },
   signupTextCont : {
@@ -61,13 +122,13 @@ const styles = StyleSheet.create({
   },
     signupText : {
 
-    color:'rgba(255,255,255,0.7)',
+    color:'#cbcbcb',
     fontSize:16
 
   },
    signupButton : {
 
-    color:'#ffffff',
+    color:'#f47a24',
     fontSize:16,
     fontWeight: '500'
 

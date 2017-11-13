@@ -72,12 +72,12 @@ const styles = StyleSheet.create({
 
   },
   button: {
-    width:150,
+    width:130,
     marginRight:40,
     marginLeft:40,
     marginTop:10,
-    paddingTop:10,
-    paddingBottom:10,
+    paddingTop:8,
+    paddingBottom:8,
     backgroundColor:'#f47a24',
     borderRadius:25,
     borderWidth: 4,
