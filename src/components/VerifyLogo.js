@@ -9,14 +9,14 @@ import {
 
 
 
-export default class Logo extends Component<{}> {
+export default class VerifyLogo extends Component<{}> {
 
 	render(){
 		return(
 
 	<View style={styles.container}>
 
-		<Image style={{width: 125, height: 125}} source={require('../images/logo.png')}/>
+		<Image style={{width: 100, height: 82}} source={require('../images/Message_icon.png')}/>
 	</View>
 
 

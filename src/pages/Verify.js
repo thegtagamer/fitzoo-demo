@@ -12,20 +12,16 @@ import {
 
 } from 'react-native';
 
-import Logo from '../components/Logo';
+import VerifyLogo from '../components/VerifyLogo';
 import Form from '../components/Form';
 
 import {Actions} from 'react-native-router-flux';
 
-export default class Signup extends Component<{}> {
+export default class Verify extends Component<{}> {
 
 
-  goBack(){
-    Actions.pop();
-  }
-
-  signupNext(){
-    Actions.signupNext()
+  login(){
+    Actions.login()
   }
 
 
@@ -36,66 +32,49 @@ export default class Signup extends Component<{}> {
 
       <ScrollView showsVerticalScrollIndicator={false} >
 	
-		<Logo />
+		<VerifyLogo />
+	<Text style={styles.logoText}>VERIFY MOBILE NUMBER</Text>
+  <Text style={styles.otpText}>OTP has been sent to you on your mobile number.</Text>
 
-	<Text style={styles.logoText}>REGISTER</Text>
+  <Text style={styles.otpText}>Please Enter it below</Text>
+
 
   <TextInput style={styles.inputBox} 
               underlineColorAndroid='#cccccc' 
-              placeholder="Name"
+              placeholder="Enter OTP"
               placeholderTextColor = "#c0c0c0"
               selectionColor="#f47a24"
               
               onSubmitEditing={()=> this.fitnessprogram.focus()}
               />
-              <TextInput style={styles.inputBox} 
-              underlineColorAndroid='#cccccc' 
-              placeholder="Fitness progran"
-              placeholderTextColor = "#c0c0c0"
-              selectionColor="#f47a24"
-              
-              onSubmitEditing={()=> this.dob.focus()}
-              />
-
-<TextInput style={styles.inputBox} 
-              underlineColorAndroid='#cccccc' 
-              placeholder="D.O.B (dd/mm/yyyy)"
-              placeholderTextColor = "#c0c0c0"
-              selectionColor="#f47a24"
-              
-              onSubmitEditing={()=> this.height.focus()}
-              />
-
-<TextInput style={styles.inputBox} 
-              underlineColorAndroid='#cccccc' 
-              placeholder="Height (cm)"
-              placeholderTextColor = "#c0c0c0"
-              selectionColor="#f47a24"
-              
-              onSubmitEditing={()=> this.weight.focus()}
-              />
 
 
-<TextInput style={styles.inputBox} 
-              underlineColorAndroid='#cccccc' 
-              placeholder="Weight (kg)"
-              placeholderTextColor = "#c0c0c0"
-              selectionColor="#f47a24"
-              
-              onSubmitEditing={()=> this.height.focus()}
-              />
 
-                 <TouchableHighlight
-  style={styles.button}
-  onPress={this.signupNext}
+          
+ 
+   <View style={{flexDirection: "row"}}>
+                  <TouchableHighlight
+  style={styles.buttonresend}
+
   underlayColor='#fff'>
-      <Text style={styles.buttonText}>Next</Text>
+      <Text style={styles.buttonText}>Resend</Text>
+</TouchableHighlight>
+
+
+
+ <TouchableHighlight
+  style={styles.button}
+  onPress={this.login}
+  underlayColor='#fff'>
+<Text style={styles.buttonText}>Next</Text>
 </TouchableHighlight>
        
-	
+	</View>
+
+
 	<View style={styles.signupTextCont}>
-<Text style={styles.signupText}>Already have an account? </Text>
-	 <TouchableOpacity onPress={this.goBack}><Text style={styles.signupButton}>Signin
+
+	 <TouchableOpacity onPress={this.goBack}><Text style={styles.signupText}>Change number? 
    </Text>
 	 </TouchableOpacity>
    </View>
@@ -107,6 +86,7 @@ export default class Signup extends Component<{}> {
 			)
 	}
 }
+
 const styles = StyleSheet.create({
   container : {
     backgroundColor:'#ffffff',
@@ -116,38 +96,70 @@ const styles = StyleSheet.create({
 
   },
   logoText: {
-    color:'#f47a24',
-    fontSize:16,
+     color:'#585858',
+    fontSize:24,
     fontWeight: '500',
     justifyContent:'center',
     alignItems: 'center',
-    textAlign: 'center'
+    textAlign: 'center',
+    marginVertical:12
 
+
+  },
+
+   otpText: {
+     color:'#585858',
+    fontSize:16,
+   
+    justifyContent:'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    marginVertical:4
 
 
   },
   inputBox: {
-    width:260,
+ width:300,
     backgroundColor:'rgba(255,255,255,0.3)',
     paddingHorizontal:4,
     paddingVertical:5,
     fontSize:16,
     borderBottomWidth: 2,
     borderBottomColor: "#cbcbcb",
+    marginVertical: 20,
     color:'#000000',
-    marginVertical:20,
+    
+    justifyContent:'center',
+    alignItems: 'center'
+ 
     },
+
+   
     button: {
      width:130,
-    marginRight:60,
-    marginLeft:60,
+    marginRight:10,
+    marginLeft:10,
     marginTop:10,
     paddingTop:8,
     paddingBottom:8,
     backgroundColor:'#f47a24',
     borderRadius:25,
     borderWidth: 4,
-    borderColor: '#f47a24'
+    borderColor: '#f47a24',
+
+  },
+    buttonresend: {
+     width:130,
+    marginRight:10,
+    marginLeft:10,
+    marginTop:10,
+    paddingTop:8,
+    paddingBottom:8,
+    backgroundColor:'#585858',
+    borderRadius:25,
+    borderWidth: 4,
+    borderColor: '#585858',
+
   },
     buttonText: {
 

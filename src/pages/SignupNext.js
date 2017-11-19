@@ -17,16 +17,17 @@ import Form from '../components/Form';
 
 import {Actions} from 'react-native-router-flux';
 
-export default class Signup extends Component<{}> {
+export default class SignupNext extends Component<{}> {
 
 
   goBack(){
     Actions.pop();
   }
 
-  signupNext(){
-    Actions.signupNext()
+    verify(){
+    Actions.verify()
   }
+
 
 
 	render(){
@@ -37,20 +38,20 @@ export default class Signup extends Component<{}> {
       <ScrollView showsVerticalScrollIndicator={false} >
 	
 		<Logo />
-
 	<Text style={styles.logoText}>REGISTER</Text>
 
   <TextInput style={styles.inputBox} 
               underlineColorAndroid='#cccccc' 
-              placeholder="Name"
+              placeholder="Address"
               placeholderTextColor = "#c0c0c0"
               selectionColor="#f47a24"
               
               onSubmitEditing={()=> this.fitnessprogram.focus()}
               />
+
               <TextInput style={styles.inputBox} 
               underlineColorAndroid='#cccccc' 
-              placeholder="Fitness progran"
+              placeholder="State"
               placeholderTextColor = "#c0c0c0"
               selectionColor="#f47a24"
               
@@ -59,7 +60,7 @@ export default class Signup extends Component<{}> {
 
 <TextInput style={styles.inputBox} 
               underlineColorAndroid='#cccccc' 
-              placeholder="D.O.B (dd/mm/yyyy)"
+              placeholder="City"
               placeholderTextColor = "#c0c0c0"
               selectionColor="#f47a24"
               
@@ -68,7 +69,7 @@ export default class Signup extends Component<{}> {
 
 <TextInput style={styles.inputBox} 
               underlineColorAndroid='#cccccc' 
-              placeholder="Height (cm)"
+              placeholder="Area"
               placeholderTextColor = "#c0c0c0"
               selectionColor="#f47a24"
               
@@ -78,16 +79,33 @@ export default class Signup extends Component<{}> {
 
 <TextInput style={styles.inputBox} 
               underlineColorAndroid='#cccccc' 
-              placeholder="Weight (kg)"
+              placeholder="Pin Code"
               placeholderTextColor = "#c0c0c0"
               selectionColor="#f47a24"
               
               onSubmitEditing={()=> this.height.focus()}
               />
+   <TextInput style={styles.inputBox} 
+                  underlineColorAndroid='#cccccc' 
+              placeholder="Email"
+              placeholderTextColor = "#c0c0c0"
+              selectionColor="#f47a24"
+              keyboardType="email-address"
+              onSubmitEditing={()=> this.password.focus()}
+              />
+
+               <TextInput style={styles.inputBox} 
+              underlineColorAndroid='#cccccc' 
+              placeholder="Mobile number"
+              secureTextEntry={true}
+              placeholderTextColor = "#c0c0c0"
+              ref={(input) => this.password = input}
+              />  
+
 
                  <TouchableHighlight
   style={styles.button}
-  onPress={this.signupNext}
+  onPress={this.verify}
   underlayColor='#fff'>
       <Text style={styles.buttonText}>Next</Text>
 </TouchableHighlight>
@@ -116,13 +134,12 @@ const styles = StyleSheet.create({
 
   },
   logoText: {
-    color:'#f47a24',
+     color:'#f47a24',
     fontSize:16,
     fontWeight: '500',
     justifyContent:'center',
     alignItems: 'center',
     textAlign: 'center'
-
 
 
   },
