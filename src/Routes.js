@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import SignupNext from './pages/SignupNext';
 import Verify from './pages/Verify';
+import Profile from './pages/Profile';
 
 export default class Routes extends Component<{}> {
 	render() {
@@ -15,6 +16,7 @@ export default class Routes extends Component<{}> {
 			      <Scene key="signup" component={Signup} title="Register"/>
 			        <Scene key="signupNext" component={SignupNext} title="Register"/>
 			        <Scene key="verify" component={Verify} title="Verify"/>
+			         <Scene key="profile" component={Profile} title="Profile"/>
 			    </Stack>
 			 </Router>
 			)

@@ -20,6 +20,8 @@ export default class Login extends Component<{}> {
 		Actions.signup()
 	}
 
+ 
+
 	render(){
 		return(
 

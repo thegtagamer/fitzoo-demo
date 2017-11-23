@@ -11,10 +11,16 @@ import {
 } from 'react-native';
 
 
+import {Actions} from 'react-native-router-flux';
+
 
 export default class Logo extends Component<{}> {
 
-	
+	 profile(){
+    Actions.profile()
+  }
+
+
   render(){
 		return(
 
@@ -37,7 +43,7 @@ export default class Logo extends Component<{}> {
        
            <TouchableHighlight
   style={styles.button}
-  onPress={() => this.submitSuggestion(this.props)}
+  onPress={this.profile}
   underlayColor='#fff'>
       <Text style={styles.buttonText}>{this.props.type}</Text>
 </TouchableHighlight>
